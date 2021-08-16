@@ -56,9 +56,7 @@ export default {
 
 ul{
   display: inline-flex;
-
   align-items: center;
-
 }
 
 li{

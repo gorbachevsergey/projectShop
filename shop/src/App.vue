@@ -1,6 +1,7 @@
 <template>
   <div >
     <headers class="headers"></headers>
+    <slider class="slider"></slider>
   </div>
 
 </template>
@@ -11,10 +12,12 @@
 <script>
 
 import headers from "./components/header.vue";
+import slider from "./components/slider.vue"
 
 export default {
   components:{
-    headers
+    headers,
+    slider
   }
 }
 
@@ -31,7 +34,7 @@ export default {
 *::after {
   box-sizing: border-box;
 }
-.headers{
+.headers, .slider{
   margin: 0 auto;
 }
 
