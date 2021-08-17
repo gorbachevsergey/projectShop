@@ -33,7 +33,7 @@ export default {
   components: {
     Swiper,
     SwiperSlide,
-    buttonBlue
+    buttonBlue,
   },
   data() {
     return {
@@ -58,7 +58,7 @@ export default {
 .slider{
   display: flex;
   width: 1600px;
-  padding: 200px 0 0 127px;
+  padding: 100px 0 0 127px;
 }
 
 .slider__text{

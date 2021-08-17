@@ -1,6 +1,8 @@
 <template>
   <div >
+
     <headers class="headers"></headers>
+    <findRoom class="find-room"></findRoom>
     <slider class="slider"></slider>
   </div>
 
@@ -12,12 +14,14 @@
 <script>
 
 import headers from "./components/header.vue";
-import slider from "./components/slider.vue"
+import slider from "./components/slider.vue";
+import findRoom from "@/components/findRoom";
 
 export default {
   components:{
     headers,
-    slider
+    slider,
+    findRoom
   }
 }
 
@@ -36,6 +40,14 @@ export default {
 }
 .headers, .slider{
   margin: 0 auto;
+}
+.find-room{
+  position: relative;
+  z-index: 5;
+  top: -25px;
+  left: -260px;
+  margin: 0 auto;
+
 }
 
 </style>
