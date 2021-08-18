@@ -7,6 +7,7 @@
     <hotelGallery class="hotelGallery"></hotelGallery>
     <aboutUs class="aboutUs"></aboutUs>
     <subscribe class="subscribe"></subscribe>
+    <footers class="footers"></footers>
   </div>
 
 </template>
@@ -23,6 +24,7 @@ import chooseUs from "@/components/chooseUs";
 import hotelGallery from "@/components/hotelgallery";
 import aboutUs from "@/components/aboutUs";
 import subscribe from "@/components/subscribe";
+import footers from "@/components/footer";
 
 export default {
   components:{
@@ -32,7 +34,8 @@ export default {
     chooseUs,
     hotelGallery,
     aboutUs,
-    subscribe
+    subscribe,
+    footers
   }
 }
 
@@ -49,7 +52,7 @@ export default {
 *::after {
   box-sizing: border-box;
 }
-.headers, .slider, .choose, .hotelGallery, .aboutUs, .subscribe{
+.headers, .slider, .choose, .hotelGallery, .aboutUs, .subscribe, .footers{
   margin: 0 auto;
 }
 .find-room{
