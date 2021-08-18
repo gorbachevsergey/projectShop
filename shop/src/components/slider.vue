@@ -10,7 +10,7 @@
       <swiper-slide>
         <iframe src="https://www.youtube.com/embed/DnMxLSccXEg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </swiper-slide>
-      <div class="swiper-pagination" slot="pagination"></div>
+<!--      <div class="swiper-pagination" slot="pagination"></div>-->
     </swiper>
     <div class="slider__text">
       <h2>DREAM HOLIDAYS</h2>

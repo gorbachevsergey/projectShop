@@ -1,9 +1,10 @@
 <template>
   <div >
-
     <headers class="headers"></headers>
     <findRoom class="find-room"></findRoom>
     <slider class="slider"></slider>
+    <chooseUs class="choose"></chooseUs>
+    <hotelGallery class="hotelGallery"></hotelGallery>
   </div>
 
 </template>
@@ -16,12 +17,16 @@
 import headers from "./components/header.vue";
 import slider from "./components/slider.vue";
 import findRoom from "@/components/findRoom";
+import chooseUs from "@/components/chooseUs";
+import hotelGallery from "@/components/hotelgallery";
 
 export default {
   components:{
     headers,
     slider,
-    findRoom
+    findRoom,
+    chooseUs,
+    hotelGallery
   }
 }
 
@@ -38,7 +43,7 @@ export default {
 *::after {
   box-sizing: border-box;
 }
-.headers, .slider{
+.headers, .slider, .choose, .hotelGallery{
   margin: 0 auto;
 }
 .find-room{
