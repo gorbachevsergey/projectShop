@@ -6,6 +6,7 @@
     <chooseUs class="choose"></chooseUs>
     <hotelGallery class="hotelGallery"></hotelGallery>
     <aboutUs class="aboutUs"></aboutUs>
+    <subscribe class="subscribe"></subscribe>
   </div>
 
 </template>
@@ -21,6 +22,7 @@ import findRoom from "@/components/findRoom";
 import chooseUs from "@/components/chooseUs";
 import hotelGallery from "@/components/hotelgallery";
 import aboutUs from "@/components/aboutUs";
+import subscribe from "@/components/subscribe";
 
 export default {
   components:{
@@ -29,7 +31,8 @@ export default {
     findRoom,
     chooseUs,
     hotelGallery,
-    aboutUs
+    aboutUs,
+    subscribe
   }
 }
 
@@ -46,7 +49,7 @@ export default {
 *::after {
   box-sizing: border-box;
 }
-.headers, .slider, .choose, .hotelGallery, .aboutUs{
+.headers, .slider, .choose, .hotelGallery, .aboutUs, .subscribe{
   margin: 0 auto;
 }
 .find-room{
@@ -56,8 +59,5 @@ export default {
   left: -260px;
   margin: 0 auto;
 
-}
-.aboutUs{
-  margin-bottom: 200px;
 }
 </style>
