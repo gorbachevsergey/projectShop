@@ -20,10 +20,6 @@
 <script>
 import buttonBlue from "@/components/button";
 export default {
-  data(){
-    return{
-    }
-  },
   components:{
     buttonBlue,
   },

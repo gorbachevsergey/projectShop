@@ -5,6 +5,7 @@
     <slider class="slider"></slider>
     <chooseUs class="choose"></chooseUs>
     <hotelGallery class="hotelGallery"></hotelGallery>
+    <aboutUs class="aboutUs"></aboutUs>
   </div>
 
 </template>
@@ -19,6 +20,7 @@ import slider from "./components/slider.vue";
 import findRoom from "@/components/findRoom";
 import chooseUs from "@/components/chooseUs";
 import hotelGallery from "@/components/hotelgallery";
+import aboutUs from "@/components/aboutUs";
 
 export default {
   components:{
@@ -26,7 +28,8 @@ export default {
     slider,
     findRoom,
     chooseUs,
-    hotelGallery
+    hotelGallery,
+    aboutUs
   }
 }
 
@@ -43,7 +46,7 @@ export default {
 *::after {
   box-sizing: border-box;
 }
-.headers, .slider, .choose, .hotelGallery{
+.headers, .slider, .choose, .hotelGallery, .aboutUs{
   margin: 0 auto;
 }
 .find-room{
@@ -54,5 +57,7 @@ export default {
   margin: 0 auto;
 
 }
-
+.aboutUs{
+  margin-bottom: 200px;
+}
 </style>
