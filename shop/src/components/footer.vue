@@ -83,7 +83,7 @@ export default {
 }
 
 .nav__logo{
-  height: 150px;
+  height: 100px;
 }
 .social__text{
   font-family: 'Poppins', sans-serif;
