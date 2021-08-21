@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import App from './App.vue'
-import scrollAnimation from "@/directives/scrollanimation";
 
+import scrollAnimation from "@/directives/scrollanimation";
 Vue.directive('scrollanimation',scrollAnimation)
+
 Vue.config.productionTip = false
 
 new Vue({

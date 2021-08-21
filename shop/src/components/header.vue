@@ -1,8 +1,8 @@
 <template>
-  <div class="header" v-scrollanimation>
+  <div class="header">
     <div class="header__nav">
       <div class="nav__logo"></div>
-      <ul v-for="(item,index) in links" v-bind:key="index" >
+      <ul v-for="(item,index) in links" v-bind:key="index">
         <a  :class="{active:item === selected }" :href="`#${item}`" @click="selected = item">{{item}}</a>
       </ul>
       <buttonBlue class="header__btn" text = "Book Now" ></buttonBlue>
@@ -42,11 +42,11 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Gelasio:wght@400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
+
 .header{
   width: 1600px;
   height: 690px;
   background-image: url("~@/image/headerBackground.png");
-
 }
 
 .header__nav{
@@ -148,15 +148,5 @@ a:hover{
   color: rgba(27, 117, 187, 1);
 }
 
-.before-enter {
-  opacity: 0;
-  transform: translateY(-200px);
-  transition: all 2s ease-in-out;
-}
-
-.enter {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 </style>

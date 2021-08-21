@@ -145,7 +145,7 @@ export default {
 }
 .before-enter {
   opacity: 0;
-  transform: rotateX(200deg);
+  transform: translateY(-200px);
   transition: all 2s ease-in-out;
 }
 

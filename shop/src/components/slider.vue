@@ -129,12 +129,12 @@ iframe{
 }
 .before-enter {
   opacity: 0;
-  transform: scale(0.1,0.1);
-  transition: all 2s ease-in-out;
+  transform: translateX(-400px);
+  transition: all 2.5s ease-in-out;
 }
 
 .enter {
-  transform: scale(1,1);
+  transform: translateX(0);
   margin-top: 0;
   opacity: 1;
 

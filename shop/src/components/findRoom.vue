@@ -120,12 +120,12 @@ h2{
 .before-enter {
   opacity: 0;
 
-  transform: rotate(25deg);
-  transition: all 3s ease-in-out;
+  transform: scale(0);
+  transition: all 1s ease-in-out;
 }
 
 .enter {
   opacity: 1;
-  transform: rotate(0);
+  transform: scale(1);
 }
 </style>
