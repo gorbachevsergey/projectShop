@@ -1,21 +1,21 @@
 <template>
-  <div class="slider">
+  <div class="slider" v-scrollanimation>
     <swiper class="swiper" :options="swiperOption">
-      <swiper-slide>
+      <swiper-slide  >
         <iframe src="https://www.youtube.com/embed/Kbtozdlxrcg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </swiper-slide>
-      <swiper-slide>
-        <iframe src="https://www.youtube.com/embed/WkbtvG4DKto" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <swiper-slide >
+        <iframe src="https://www.youtube.com/embed/WkbtvG4DKto" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
       </swiper-slide>
-      <swiper-slide>
+      <swiper-slide >
         <iframe src="https://www.youtube.com/embed/DnMxLSccXEg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </swiper-slide>
-<!--      <div class="swiper-pagination" slot="pagination"></div>-->
+      <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
-    <div class="slider__text">
+    <div class="slider__text" @click="next">
       <h2>DREAM HOLIDAYS</h2>
       <p>Enjoy unforgettable experiences in dream hotels.</p>
-      <button-blue class="text__btn" text="View more"></button-blue>
+      <button-blue type="button" class="text__btn" text="View more"></button-blue>
     </div>
   </div>
 
@@ -38,14 +38,23 @@ export default {
   data() {
     return {
       swiperOption: {
+        slideToClickedSlide:true,
         slidesPerView: 1,
-
-
         pagination: {
           el: '.swiper-pagination',
-          clickable: true
-        }
+          clickable: true,
+
+
+        },
+        autoplay: {
+          delay: 5000,
+        },
       }
+    }
+  },
+  methods: {
+    next: function (){
+      return this.swiper.navigation.nextEl
     }
   }
 }
@@ -59,6 +68,7 @@ export default {
   display: flex;
   width: 1600px;
   padding: 100px 0 0 127px;
+  margin-top: 200px;
 }
 
 .slider__text{
@@ -101,8 +111,9 @@ export default {
 
 .swiper-slide-next{
   z-index: -1;
-  left: -500px;
+  left: -440px;
   bottom: 50px;
+  opacity: 0.8;
 }
 
 
@@ -116,5 +127,16 @@ iframe{
   width: 630px;
   border-radius: 15px;
 }
+.before-enter {
+  opacity: 0;
+  transform: scale(0.1,0.1);
+  transition: all 2s ease-in-out;
+}
 
+.enter {
+  transform: scale(1,1);
+  margin-top: 0;
+  opacity: 1;
+
+}
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="subscribe">
+  <div class="subscribe" v-scrollanimation>
     <div class="subscribe__title">STAY IN TOUCH</div>
     <div class="subscribe__text">Join our email. First to know about specials,events and more!</div>
     <div class="subscribe__form" >
@@ -101,4 +101,14 @@ export default {
   border-radius: 5px;
 }
 
+.before-enter {
+  opacity: 0;
+  transform: rotate(180deg);
+  transition: all 1s ease-in-out;
+}
+
+.enter {
+  opacity: 1;
+  transform: rotate(0);
+}
 </style>

@@ -20,6 +20,7 @@
 
 import vueMultiSelect from 'vue-multi-select';
 import 'vue-multi-select/dist/lib/vue-multi-select.css';
+import Button from "@/components/button";
 
 export default {
   data() {
@@ -48,6 +49,7 @@ export default {
   methods: {
   },
   components: {
+    Button,
     vueMultiSelect,
   },
 };
@@ -79,6 +81,13 @@ export default {
 .select .caret{
   display: none !important;
 
+}
+.select button{
+  background: none !important;
+}
+
+input{
+  width: 100px;
 }
 
 .chosePeople__text{

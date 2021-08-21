@@ -21,7 +21,7 @@
 export default {
   data(){
     return{
-      isActive: true,
+      isActive: false,
     }
   },
   props:['img','text','name','instagram']
@@ -91,6 +91,8 @@ export default {
 
 }
 .active{
-  opacity: 0.7;
+  box-shadow: 0 0 10px 2px rgb(17, 91, 147);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
 }
 </style>

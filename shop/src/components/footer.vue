@@ -1,5 +1,5 @@
 <template>
-  <div class="footers">
+  <div class="footers" v-scrollanimation>
     <div class="footers__social">
       <div class="nav__logo">
         <img src="~@/image/logo.svg">
@@ -165,4 +165,14 @@ export default {
   border-radius: 5px;
 }
 
+.before-enter {
+  opacity: 0;
+  transform: translateY(200px);
+  transition: all 2s ease-in-out;
+}
+
+.enter {
+  opacity: 1;
+  transform: translateY(0);
+}
 </style>

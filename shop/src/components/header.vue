@@ -1,9 +1,9 @@
 <template>
-  <div class="header">
+  <div class="header" v-scrollanimation>
     <div class="header__nav">
       <div class="nav__logo"></div>
       <ul v-for="(item,index) in links" v-bind:key="index" >
-        <li :class="{active:item === selected }" @click="selected = item">{{item}}</li>
+        <a  :class="{active:item === selected }" :href="`#${item}`" @click="selected = item">{{item}}</a>
       </ul>
       <buttonBlue class="header__btn" text = "Book Now" ></buttonBlue>
     </div>
@@ -59,7 +59,7 @@ ul{
   align-items: center;
 }
 
-li{
+a{
   list-style-type: none;
   font-family: 'Gelasio', serif;
   font-size: 16px;
@@ -72,11 +72,11 @@ li{
   align-items: center
 }
 
-li.active{
+a.active{
   color: rgba(27, 117, 187, 1);
 }
 
-li:hover{
+a:hover{
   text-shadow: 5px 3px 4px black;
 }
 
@@ -146,6 +146,17 @@ li:hover{
 
 .text__blue{
   color: rgba(27, 117, 187, 1);
+}
+
+.before-enter {
+  opacity: 0;
+  transform: translateY(-200px);
+  transition: all 2s ease-in-out;
+}
+
+.enter {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 </style>

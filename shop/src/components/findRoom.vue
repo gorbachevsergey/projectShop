@@ -1,6 +1,6 @@
 <template>
 
-  <div class="choiceDate">
+  <div class="choiceDate" v-scrollanimation>
     <div class="choiceDate__date">
       <h2>Cheek in</h2>
       <datepicker placeholder="Select Date" v-model="vModelExample"></datepicker>
@@ -115,5 +115,17 @@ h2{
 .choiceDate__btn{
   margin-left: 60px;
 
+}
+
+.before-enter {
+  opacity: 0;
+
+  transform: rotate(25deg);
+  transition: all 3s ease-in-out;
+}
+
+.enter {
+  opacity: 1;
+  transform: rotate(0);
 }
 </style>

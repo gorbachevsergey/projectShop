@@ -42,6 +42,10 @@ export default {
   width: 555px;
   display: flex;
   align-items: flex-end;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: flex-end;
 }
 
 .room__about, .btn{

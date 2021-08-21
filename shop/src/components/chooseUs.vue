@@ -1,5 +1,5 @@
 <template>
-  <div class="choose" >
+  <div class="choose"  v-scrollanimation>
     <div>
       <div class="choose__header">Why you choose us!</div>
       <div class="choose__text">
@@ -9,7 +9,7 @@
       </div>
     </div>
 
-    <div class="choose__block">
+    <div class="choose__block" >
       <div class="choose__item" v-for="item in choose" v-bind:key="item.id">
         <div class="item__block">
           <div class="block__logo"> <img :src="item.img"> </div>
@@ -75,7 +75,7 @@ export default {
   flex-direction: column;
   width: 1140px;
   height: 480px;
-  margin-top: 60px;
+  margin-top: 560px;
 }
 
 .choose__header{
@@ -143,5 +143,15 @@ export default {
   text-align: center;
 
 }
+.before-enter {
+  opacity: 0;
+  transform: rotateX(200deg);
+  transition: all 2s ease-in-out;
+}
 
+.enter {
+  opacity: 1;
+  margin-top: 60px;
+  transform: translateY(0);
+}
 </style>
