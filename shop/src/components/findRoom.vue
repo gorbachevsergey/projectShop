@@ -3,16 +3,16 @@
   <div class="choiceDate" v-scrollanimation>
     <div class="choiceDate__date">
       <h2>Cheek in</h2>
-      <datepicker placeholder="Select Date" v-model="vModelExample"></datepicker>
+      <datepicker placeholder="Select Date" v-model="dateBegin"></datepicker>
     </div>
     <div class="choiceDate__line"></div>
     <div class="choiceDate__date">
       <h2>Cheek out</h2>
-      <datepicker placeholder="Select Date" v-model="vModelDate"></datepicker>
+      <datepicker placeholder="Select Date" v-model="dateEnd"></datepicker>
     </div>
     <div class="choiceDate__line"></div>
     <chosePeople></chosePeople>
-    <buttonBlue class="choiceDate__btn" text="Find room"></buttonBlue>
+    <buttonBlue class="choiceDate__btn" text="Find room" @click.native="sendChoice"></buttonBlue>
   </div>
 
 </template>
@@ -54,8 +54,6 @@ export default {
       eventMsg: null,
       language: "en",
       languages: lang,
-      vModelExample: null,
-      vModelDate:null,
       changedMonthLog: []
   }
   },
@@ -67,7 +65,25 @@ export default {
   methods: {
     logChangedMonth(date) {
       this.changedMonthLog.push(date)
-    }
+    },
+  },
+  computed:{
+    dateBegin : {
+      get () {
+        return this.$store.state.dateBegin
+      },
+      set (value) {
+        this.$store.commit('dateBegin', value)
+      }
+    },
+    dateEnd : {
+      get () {
+        return this.$store.state.dateEnd
+      },
+      set (value) {
+        this.$store.commit('dateEnd', value)
+      }
+    },
   }
 }
 </script>

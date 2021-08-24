@@ -1,19 +1,17 @@
 <template>
-
   <div class="chosePeople">
     <div class="chosePeople__text">Person</div>
-    <div class="choisePeople__select">
+    <div class="chosePeople__select">
       <vue-multi-select
-          v-model="adults"
+          v-model="choiceAdults"
           :btnLabel="btnLabelAdults"
-          :selectOptions="dataAdults"/>
+          :selectOptions="this.$store.state.dataAdults"/>
       <vue-multi-select
-          v-model="kid"
+          v-model="choiceKid"
           :btnLabel="btnLabelKid"
-          :selectOptions="dataKid"/>
+          :selectOptions="this.$store.state.dataKid"/>
       </div>
   </div>
-
 </template>
 
 <script>
@@ -22,37 +20,41 @@ import vueMultiSelect from 'vue-multi-select';
 import 'vue-multi-select/dist/lib/vue-multi-select.css';
 import Button from "@/components/button";
 
+
+
 export default {
   data() {
     return {
       btnLabelAdults: values =>values.length > 0 ? values[0].name + ' adults' : 'Adults',
       btnLabelKid: values =>values.length > 0 ? values[0].name + ' kid' : 'Kid',
       adults: [],
-      kid: [],
-      dataKid: [
-        { name: '0' },
-        { name: '1' },
-        { name: '2' },
-        { name: '3' },
-        { name: '4' },
-        { name: '5' },
-      ],
-      dataAdults: [
-        { name: '1' },
-        { name: '2' },
-        { name: '3' },
-        { name: '4' },
-        { name: '5' },
-      ],
+      kid:[],
     };
-  },
-  methods: {
   },
   components: {
     Button,
     vueMultiSelect,
   },
+  computed:{
+    choiceAdults: {
+      get () {
+        return this.$store.state.adults
+      },
+      set (value){
+        this.$store.commit('choiceAdults',value)
+      }
+    },
+    choiceKid :{
+      get () {
+        return this.$store.state.kids
+      },
+      set(value) {
+        this.$store.commit('choiceKids',value)
+      }
+    }
+  }
 };
+
 </script>
 
 <style >
@@ -65,7 +67,7 @@ export default {
   display: flex;
   flex-direction: column;
 }
-.choisePeople__select{
+.chosePeople__select{
   display: flex;
   flex-direction: row;
 }
