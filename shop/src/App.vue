@@ -26,6 +26,8 @@ import hotelGallery from "@/components/hotelgallery";
 import aboutUs from "@/components/aboutUs";
 import subscribe from "@/components/subscribe";
 import footers from "@/components/footer";
+import Vue from "vue";
+import VueScrollTo from "vue-scrollto";
 
 export default {
   components: {
@@ -39,6 +41,20 @@ export default {
     footers
   },
 }
+
+Vue.use(VueScrollTo, {
+  container: "body",
+  duration: 500,
+  easing: "ease",
+  offset: 0,
+  force: true,
+  cancelable: true,
+  onStart: false,
+  onDone: false,
+  onCancel: false,
+  x: false,
+  y: true
+})
 
 </script>
 

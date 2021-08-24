@@ -3,7 +3,7 @@
     <div class="header__nav">
       <div class="nav__logo"></div>
       <ul v-for="(item,index) in links" v-bind:key="index">
-        <a  :class="{active:item === selected }" :href="`#${item}`" @click="selected = item">{{item}}</a>
+        <a  :class="{active:item === selected }" v-scroll-to="`#${item}`" @click="selected = item">{{item}}</a>
       </ul>
       <buttonBlue class="header__btn" text = "Book Now" ></buttonBlue>
     </div>
