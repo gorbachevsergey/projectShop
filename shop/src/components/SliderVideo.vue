@@ -1,21 +1,15 @@
 <template>
   <div class="slider" v-scrollanimation>
     <swiper class="swiper" :options="swiperOption">
-      <swiper-slide  >
-        <iframe src="https://www.youtube.com/embed/Kbtozdlxrcg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </swiper-slide>
-      <swiper-slide >
-        <iframe src="https://www.youtube.com/embed/WkbtvG4DKto" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
-      </swiper-slide>
-      <swiper-slide >
-        <iframe src="https://www.youtube.com/embed/DnMxLSccXEg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <swiper-slide v-for="video in listVideo" :key="video.id">
+        <iframe :src=video.url title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
     <div class="slider__text" @click="next">
       <h2>DREAM HOLIDAYS</h2>
       <p>Enjoy unforgettable experiences in dream hotels.</p>
-      <button-blue type="button" class="text__btn" text="View more"></button-blue>
+      <BaseButton type="button" class="text__btn" text="View more"></BaseButton>
     </div>
   </div>
 
@@ -25,7 +19,7 @@
 
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
-import buttonBlue from "@/components/button";
+import BaseButton from "@/components/BaseButton";
 
 export default {
   name: 'swiper-example-multiple-slides-per-biew',
@@ -33,18 +27,30 @@ export default {
   components: {
     Swiper,
     SwiperSlide,
-    buttonBlue,
+    BaseButton,
   },
   data() {
     return {
+      listVideo:[
+        {
+          id : 0,
+          url: 'https://www.youtube.com/embed/Kbtozdlxrcg'
+        },
+        {
+          id : 1,
+          url: 'https://www.youtube.com/embed/WkbtvG4DKto'
+        },
+        {
+          id : 2,
+          url: 'https://www.youtube.com/embed/DnMxLSccXEg'
+        }
+        ],
       swiperOption: {
         slideToClickedSlide:true,
         slidesPerView: 1,
         pagination: {
           el: '.swiper-pagination',
           clickable: true,
-
-
         },
         autoplay: {
           delay: 5000,

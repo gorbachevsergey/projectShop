@@ -6,9 +6,9 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     state:{
         links:['Home','Features','Gallary','Testimonials'],
-        adults: [],
-        kids: [],
-        dataKid: [
+        choiceAmountAdults: [],
+        choiceAmountChildren: [],
+        amountChildren: [
             { name: '0' },
             { name: '1' },
             { name: '2' },
@@ -16,16 +16,16 @@ export default new Vuex.Store({
             { name: '4' },
             { name: '5' },
         ],
-        dataAdults: [
+        amountAdults: [
             { name: '1' },
             { name: '2' },
             { name: '3' },
             { name: '4' },
             { name: '5' },
         ],
-        dateBegin:null,
-        dateEnd:null,
-        rooms:[
+        bookingDateBegin:null,
+        bookingDateEnd:null,
+        listRoom:[
             {
                 id: '1',
                 name:'Lux: Room',
@@ -57,7 +57,7 @@ export default new Vuex.Store({
                 background: '/img/room5.png',
             },
         ],
-        reviews:[
+        listReviews:[
             {
                 id:'1',
                 img: require('../image/man1.png'),
@@ -103,25 +103,57 @@ export default new Vuex.Store({
         ],
     },
     getters:{
-        baseRoom(state){
-            return state.rooms
+        getListRoom(state){
+            return state.listRoom
         },
-        reviews(state){
-            return state.reviews
+        getListReviews(state){
+            return state.listReviews
+        },
+        getListLinks(state){
+            return state.links
+        },
+        getBookingDateEnd(state){
+            return state.bookingDateEnd
+        },
+        getBookingDateBegin(state){
+            return state.bookingDateBegin
+        },
+        getListAmountChildren(state){
+            return state.amountChildren
+        },
+        getListAmountAdult(state){
+            return state.amountAdults
         }
+
+    },
+    actions:{
+        choiceAmountAdults(context,value){
+            context.commit('choiceAmountAdults',value)
+        },
+        choiceAmountChildren(context,value){
+            context.commit('choiceAmountChildren',value)
+        },
+        bookingDateEnd(context,value){
+            context.commit('bookingDateEnd',value)
+        },
+        bookingDateBegin(context,value){
+            context.commit('bookingDateBegin',value)
+        },
+
     },
     mutations:{
-        choiceKids(state,payload){
-            state.kids = payload
+        choiceAmountChildren(state,payload){
+            state.choiceAmountChildren = payload
         },
-        choiceAdults(state,payload){
-            state.adults = payload
+        choiceAmountAdults(state,payload){
+            state.choiceAmountAdults = payload
         },
-        dateBegin(state, payload){
-            state.dateBegin = payload
+        bookingDateEnd(state, payload){
+            state.bookingDateEnd = payload
         },
-        dateEnd(state, payload){
-            state.dateEnd = payload
+        bookingDateBegin(state, payload){
+            state.bookingDateBegin = payload
         },
-    }
+
+    },
 })

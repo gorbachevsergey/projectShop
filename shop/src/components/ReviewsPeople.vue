@@ -3,15 +3,19 @@
   <div class="about" v-scrollanimation>
     <div class="about__title">
       <div class="title__header">What our client say</div>
-      <buttonBlue text="View All" @click.native="len += 3"></buttonBlue>
+      <BaseButton text="View All" @click.native="listReviewsMore"></BaseButton>
     </div>
     <div class="about__body">
-
-        <div v-for="item in this.reviews.slice(0,len)" v-bind:key="item.id" >
-          <about class="animate__animated animate__fadeInUp" :img="item.img" :text="item.text" :name="item.name" :instagram="item.instagram" ></about>
+        <div v-for="item in listReviewsLength" :key="item.id" >
+          <ReviewsPeopleItem
+              class="animate__animated animate__fadeInUp"
+              :img="item.img"
+              :text="item.text"
+              :name="item.name"
+              :instagram="item.instagram"
+          >
+          </ReviewsPeopleItem>
         </div>
-
-
     </div>
   </div>
 
@@ -22,22 +26,30 @@
 
 <script>
 
-import about from "@/components/about";
-import buttonBlue from "@/components/button";
+import ReviewsPeopleItem from "@/components/ReviewsPeopleItem";
+import BaseButton from "@/components/BaseButton";
 import {mapGetters} from 'vuex'
 
 export default {
+  components:{
+    BaseButton,
+    ReviewsPeopleItem
+  },
   data(){
     return{
-      len : 3,
+      listReviewsLen : 3,
     }
   },
-  components:{
-    buttonBlue,
-    about
-  },
   computed:{
-    ...mapGetters(['reviews'])
+    ...mapGetters(['getListReviews']),
+    listReviewsLength () {
+      return this.getListReviews.slice(0,this.listReviewsLen)
+    },
+  },
+  methods:{
+    listReviewsMore (){
+      this.listReviewsLen += 3
+    }
   }
 }
 

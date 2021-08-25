@@ -2,33 +2,44 @@
   <div class="header">
     <div class="header__nav">
       <div class="nav__logo"></div>
-      <ul v-for="(item,index) in this.$store.state.links" v-bind:key="index">
-        <a  :class="{active:item === selected }" v-scroll-to="`#${item}`" @click="selected = item">{{item}}</a>
+      <ul v-for="(item,index) in getListLinks" v-bind:key="index">
+        <a
+            :class="{active:item === selected }"
+            v-scroll-to="`#${item}`"
+            @click="selected = item"
+        >
+          {{item}}
+        </a>
       </ul>
-      <buttonBlue class="header__btn" text = "Book Now" ></buttonBlue>
+      <BaseButton class="header__btn" text = ".l." ></BaseButton>
     </div>
     <div class="header__text">
       <h2>SERENITY</h2>
       <h3>Stay with us feel like <span class="text__blue">home</span>.</h3>
       <p>Pet-friendly hotels are becoming increasingly popular; appealing to travellers who can’t bear to be parted.</p>
-      <button-blue class="text__btn" text="Read more"></button-blue>
+      <BaseButton class="text__btn" text="Read more"></BaseButton>
     </div>
   </div>
-
 </template>
 
 <script>
 
-import buttonBlue from "@/components/button";
+import BaseButton from "@/components/BaseButton";
+import {mapGetters} from 'vuex'
+
 export default {
+  components:{
+    BaseButton,
+  },
   data() {
     return{
       selected:[],
     }
   },
-  components:{
-    buttonBlue,
-  },
+  computed:{
+    ...mapGetters(['getListLinks'])
+
+  }
 }
 
 </script>

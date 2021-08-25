@@ -1,13 +1,13 @@
 <template>
-  <div>
 
+  <div>
     <div class="room" :style="{ backgroundImage: 'url('+ background +')' }">
       <div class="room__choice">
         <div class="room__about">
           <div class="room__name">{{name}}</div>
           <div class="room__price">{{price}}</div>
         </div>
-        <buttonBlue class="btn" text="Book now"></buttonBlue>
+        <BaseButton class="btn" text="Book now"></BaseButton>
       </div>
     </div>
   </div>
@@ -18,12 +18,25 @@
 
 
 <script>
-import buttonBlue from "@/components/button";
+import BaseButton from "@/components/BaseButton";
 export default {
   components:{
-    buttonBlue,
+    BaseButton,
   },
-  props:['price','name','background']
+  props:{
+    price:{
+      type: String,
+      default: 'price no load'
+    },
+    name:{
+      type: String,
+      default: 'name no load'
+    },
+    background:{
+      type: String,
+      default: 'white',
+    }
+  }
 }
 
 </script>

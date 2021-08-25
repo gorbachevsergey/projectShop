@@ -11,27 +11,27 @@
       <datepicker placeholder="Select Date" v-model="dateEnd"></datepicker>
     </div>
     <div class="choiceDate__line"></div>
-    <chosePeople></chosePeople>
-    <buttonBlue class="choiceDate__btn" text="Find room" @click.native="sendChoice"></buttonBlue>
+    <SearchRoomsPersonChoice></SearchRoomsPersonChoice>
+    <BaseButton class="choiceDate__btn" text="Find room"></BaseButton>
   </div>
 
 </template>
 
 
-
-
-
-
-
-
 <script>
+
 import Datepicker from "vuejs-datepicker/dist/vuejs-datepicker.esm.js";
 import * as lang from "vuejs-datepicker/src/locale";
-import buttonBlue from "@/components/button";
-import chosePeople from "@/components/chosePeople";
-
+import BaseButton from "@/components/BaseButton";
+import SearchRoomsPersonChoice from "@/components/SearchRoomsPersonChoice";
+import {mapGetters, mapActions} from 'vuex'
 
 export default {
+  components: {
+    BaseButton,
+    Datepicker,
+    SearchRoomsPersonChoice,
+  },
   data() {
     return {
       format: "d MMMM yyyy",
@@ -57,40 +57,39 @@ export default {
       changedMonthLog: []
   }
   },
-  components: {
-    buttonBlue,
-    Datepicker,
-    chosePeople
+  computed:{
+    ...mapGetters(['getBookingDateBegin','getBookingDateEnd']),
+    dateBegin : {
+      get () {
+        return this.getBookingDateBegin
+      },
+      set (value) {
+        this.bookingDateBegin(value)
+      }
+    },
+    dateEnd : {
+      get () {
+        return this.getBookingDateEnd
+      },
+      set (value) {
+        this.bookingDateEnd(value)
+      }
+    },
   },
   methods: {
     logChangedMonth(date) {
       this.changedMonthLog.push(date)
     },
+    ...mapActions(['bookingDateEnd','bookingDateBegin']),
   },
-  computed:{
-    dateBegin : {
-      get () {
-        return this.$store.state.dateBegin
-      },
-      set (value) {
-        this.$store.commit('dateBegin', value)
-      }
-    },
-    dateEnd : {
-      get () {
-        return this.$store.state.dateEnd
-      },
-      set (value) {
-        this.$store.commit('dateEnd', value)
-      }
-    },
-  }
 }
 </script>
 
 
 <style scoped>
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
 .choiceDate{
   width: 687px;
   height: 110px;

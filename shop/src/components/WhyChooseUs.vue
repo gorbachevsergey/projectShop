@@ -1,4 +1,5 @@
 <template>
+
   <div class="choose"  v-scrollanimation>
     <div>
       <div class="choose__header">Why you choose us!</div>
@@ -10,7 +11,7 @@
     </div>
 
     <div class="choose__block" >
-      <div class="choose__item" v-for="item in choose" v-bind:key="item.id">
+      <div class="choose__item" v-for="item in choose" :key="item.id">
         <div class="item__block">
           <div class="block__logo"> <img :src="item.img"> </div>
           <div class="block__header">{{item.header}}</div>
@@ -18,7 +19,6 @@
         </div>
       </div>
     </div>
-
   </div>
 
 </template>
@@ -67,6 +67,7 @@ export default {
 
 
 <style scoped>
+
 @import url('https://fonts.googleapis.com/css2?family=Gelasio:wght@400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
@@ -97,7 +98,6 @@ export default {
   margin: 25px auto;
   width: 819px;
   height: 58px;
-
   color: rgba(8, 31, 50, 0.4);
 }
 
@@ -143,6 +143,7 @@ export default {
   text-align: center;
 
 }
+
 .before-enter {
   opacity: 0;
   transform: translateY(-200px);

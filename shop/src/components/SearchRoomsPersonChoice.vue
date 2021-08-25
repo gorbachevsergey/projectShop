@@ -5,11 +5,11 @@
       <vue-multi-select
           v-model="choiceAdults"
           :btnLabel="btnLabelAdults"
-          :selectOptions="this.$store.state.dataAdults"/>
+          :selectOptions="getListAmountAdult"/>
       <vue-multi-select
           v-model="choiceKid"
           :btnLabel="btnLabelKid"
-          :selectOptions="this.$store.state.dataKid"/>
+          :selectOptions="getListAmountChildren"/>
       </div>
   </div>
 </template>
@@ -18,42 +18,39 @@
 
 import vueMultiSelect from 'vue-multi-select';
 import 'vue-multi-select/dist/lib/vue-multi-select.css';
-import Button from "@/components/button";
+import {mapGetters,mapActions} from 'vuex'
 
 
 
 export default {
+  components: {
+    vueMultiSelect,
+  },
   data() {
     return {
       btnLabelAdults: values =>values.length > 0 ? values[0].name + ' adults' : 'Adults',
       btnLabelKid: values =>values.length > 0 ? values[0].name + ' kid' : 'Kid',
-      adults: [],
-      kid:[],
     };
   },
-  components: {
-    Button,
-    vueMultiSelect,
-  },
   computed:{
+    ...mapGetters(['getListAmountChildren','getListAmountAdult']),
     choiceAdults: {
-      get () {
-        return this.$store.state.adults
-      },
-      set (value){
-        this.$store.commit('choiceAdults',value)
+      get () {},
+      set (value) {
+        this.choiceAmountAdults(value)
       }
     },
     choiceKid :{
-      get () {
-        return this.$store.state.kids
-      },
+      get () {},
       set(value) {
-        this.$store.commit('choiceKids',value)
+        this.choiceAmountChildren(value)
       }
-    }
+    },
+  },
+  methods : {
+    ...mapActions(['choiceAmountChildren','choiceAmountAdults']),
   }
-};
+}
 
 </script>
 

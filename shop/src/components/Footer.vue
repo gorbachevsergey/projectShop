@@ -1,6 +1,6 @@
 <template>
-  <div class="footers" v-scrollanimation>
-    <div class="footers__social">
+  <div class="footer" v-scrollanimation>
+    <div class="footer__social">
       <div class="nav__logo">
         <img src="~@/image/logo.svg">
       </div>
@@ -13,13 +13,13 @@
         <img src="~@/image/google.svg">
       </div>
     </div>
-    <div class="footers__pages">
+    <div class="footer__pages">
       <div class="pages__title">Home</div>
       <a class="title__ref" href="">Accessibility</a>
       <a class="title__ref" href="">Lertifiotion</a>
       <a class="title__ref" href="">Knowledge</a>
     </div>
-    <div class="footers__pages">
+    <div class="footer__pages">
       <div class="pages__title">Pages</div>
       <a class="title__ref" href="">Blogs</a>
       <a class="title__ref" href="">Careers</a>
@@ -31,7 +31,7 @@
         <div :class="['input-group', isEmailValid()]">
           <input type="email" class="form__control" placeholder="Enter your email address" v-model="email" />
         </div>
-        <buttonBlue text="Subscribe"></buttonBlue>
+        <BaseButton text="Subscribe"></BaseButton>
       </div>
 
     </div>
@@ -43,9 +43,12 @@
 
 <script>
 
-import buttonBlue from "@/components/button";
+import BaseButton from "@/components/BaseButton";
 
 export default {
+  components:{
+    BaseButton
+  },
   data () {
     return{
       email: '',
@@ -57,10 +60,6 @@ export default {
       return (this.email === "")? "" : (this.reg.test(this.email)) ? 'hasSuccess' : 'hasError';
     }
   },
-  components:{
-    buttonBlue
-  }
-
 }
 </script>
 
@@ -73,7 +72,7 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-.footers{
+.footer{
   display: flex;
   justify-content: space-between;
   margin-top: 124px;
@@ -131,7 +130,8 @@ export default {
   color: rgba(8, 31, 50, 1);
   margin-bottom: 20px;
 }
-.footers__pages{
+
+.footer__pages{
   display: flex;
   flex-direction: column;
 
@@ -175,4 +175,5 @@ export default {
   opacity: 1;
   transform: translateY(0);
 }
+
 </style>

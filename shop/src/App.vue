@@ -1,44 +1,41 @@
 <template>
   <div class="mainPage">
-    <headers  id="Home" class="headers" ></headers>
-    <findRoom class="find-room"></findRoom>
-    <slider class="slider"></slider>
-    <chooseUs id="Features" class="choose"></chooseUs>
-    <hotelGallery id="Gallary" class="hotelGallery" ></hotelGallery>
-    <aboutUs id="Testimonials" class="aboutUs"></aboutUs>
-    <subscribe class="subscribe"></subscribe>
-    <footers class="footers"></footers>
+    <Header id="Home"></Header>
+    <SearchRooms class="SearchRooms"></SearchRooms>
+    <SliderVideo></SliderVideo>
+    <WhyChooseUs id="Features"></WhyChooseUs>
+    <HotelGallery id="Gallary"></HotelGallery>
+    <ReviewsPeople id="Testimonials"></ReviewsPeople>
+    <Subscribe></Subscribe>
+    <Footer></Footer>
   </div>
-
 </template>
-
-
-
 
 <script>
 
 import 'animate.css'
-import headers from "./components/header.vue";
-import slider from "./components/slider.vue";
-import findRoom from "@/components/findRoom";
-import chooseUs from "@/components/chooseUs";
-import hotelGallery from "@/components/hotelgallery";
-import aboutUs from "@/components/aboutUs";
-import subscribe from "@/components/subscribe";
-import footers from "@/components/footer";
+import Header from "@/components/Header";
+import SliderVideo from "@/components/SliderVideo";
+import SearchRooms from "@/components/SearchRooms";
+import WhyChooseUs from "@/components/WhyChooseUs";
+import HotelGallery from "@/components/HotelGallery";
+import ReviewsPeople from "@/components/ReviewsPeople";
+import Subscribe from "@/components/Subscribe";
+import Footer from "@/components/Footer";
 import Vue from "vue";
 import VueScrollTo from "vue-scrollto";
 
+
 export default {
   components: {
-    headers,
-    slider,
-    findRoom,
-    chooseUs,
-    hotelGallery,
-    aboutUs,
-    subscribe,
-    footers
+    Header,
+    SliderVideo,
+    SearchRooms,
+    WhyChooseUs,
+    HotelGallery,
+    ReviewsPeople,
+    Subscribe,
+    Footer
   },
 }
 
@@ -68,7 +65,7 @@ Vue.use(VueScrollTo, {
 }
 
 
-.find-room{
+.SearchRooms{
   position: relative;
   z-index: 5;
   top: -25px;

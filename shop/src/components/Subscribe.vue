@@ -1,4 +1,5 @@
 <template>
+
   <div class="subscribe" v-scrollanimation>
     <div class="subscribe__title">STAY IN TOUCH</div>
     <div class="subscribe__text">Join our email. First to know about specials,events and more!</div>
@@ -6,7 +7,7 @@
       <div :class="['input-group', isEmailValid()]">
         <input type="email" class="form__control" placeholder="Enter your email address" v-model="email" />
       </div>
-      <buttonBlue text="Subscribe"></buttonBlue>
+      <BaseButton text="Subscribe"></BaseButton>
     </div>
   </div>
 
@@ -17,9 +18,12 @@
 
 <script>
 
-import buttonBlue from "@/components/button";
+import BaseButton from "@/components/BaseButton";
 
 export default {
+  components:{
+    BaseButton
+  },
   data () {
     return{
       email: '',
@@ -31,9 +35,7 @@ export default {
       return (this.email === "")? "" : (this.reg.test(this.email)) ? 'hasSuccess' : 'hasError';
     }
   },
-  components:{
-    buttonBlue
-  }
+
 
 }
 

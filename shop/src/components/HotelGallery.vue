@@ -4,10 +4,10 @@
       <div class="room__about">
         <div class="about__header">About hotel gallery</div>
         <div class="about__text">While some of these examples are real – actually offering guests a stay in the locations advertised – it’s mainly just a way.</div>
-        <buttonBlue class="btn" text="View more"></buttonBlue>
+        <BaseButton class="btn" text="View more"></BaseButton>
       </div>
-      <div v-for="item in this.baseRoom" v-bind:key="item.id" class="room">
-        <room :name="item.name" :price="item.price" :background="item.background"></room>
+      <div v-for="item in this.getListRoom" :key="item.id" class="room">
+        <HotelGalleryRoom :name="item.name" :price="item.price" :background="item.background"></HotelGalleryRoom>
       </div>
     </div>
 
@@ -20,18 +20,18 @@
 
 
 <script>
-import room from "@/components/room";
-import buttonBlue from "@/components/button";
+import HotelGalleryRoom from "@/components/HotelGalleryRoom";
+import BaseButton from "@/components/BaseButton";
 import {mapGetters} from 'vuex'
 
 
 export default {
   components:{
-    room,
-    buttonBlue
+    HotelGalleryRoom,
+    BaseButton
   },
   computed:{
-    ...mapGetters(['baseRoom'])
+    ...mapGetters(['getListRoom'])
   }
 }
 

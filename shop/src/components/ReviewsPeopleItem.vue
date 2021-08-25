@@ -1,5 +1,5 @@
 <template>
-  <div :class="{ active : isActive }" class="abouts" @click=" isActive === true ? isActive = false : isActive = true ">
+  <div :class="{ active : isActive }" class="abouts" @click=" isActive = !isActive">
     <div class="abouts__foto">
       <img :src="img">
     </div>
@@ -19,12 +19,30 @@
 <script>
 
 export default {
+  props:{
+    img:{
+      type: String,
+      default: 'photo no load'
+    },
+    text:{
+      type: String,
+      default: 'text no load'
+    },
+    name:{
+      type: String,
+      default: 'name no load'
+    },
+    instagram:{
+      type: String,
+      default: 'instagram no load'
+    }
+  },
   data(){
     return{
       isActive: false,
     }
   },
-  props:['img','text','name','instagram']
+
 }
 
 </script>
