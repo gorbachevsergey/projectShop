@@ -206,6 +206,7 @@ input {outline:none;}
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-end;
+    margin-top: 50px;
   }
 
 }

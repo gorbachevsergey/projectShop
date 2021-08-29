@@ -207,7 +207,8 @@ a:hover{
 
   .header__text p{
     font-size: 18px;
-    margin: 20px auto;
+    line-height: 25px;
+    margin: 5px auto;
     color: black;
   }
 
