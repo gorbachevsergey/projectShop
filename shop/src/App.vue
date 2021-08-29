@@ -76,4 +76,13 @@ Vue.use(VueScrollTo, {
     left: 20px;
   }
 }
+@media (max-width: 425px) {
+  .SearchRooms{
+    left: 0;
+    top: 0;
+    flex-direction: column;
+    width: 100%;
+  }
+
+}
 </style>

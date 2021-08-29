@@ -66,9 +66,6 @@ export default {
 .header__nav{
   display: flex;
   width: 100%;
-
-
-
 }
 
 ul{
@@ -177,6 +174,51 @@ a:hover{
   .header__btn{
     margin-right: calc(10px + (230 - 20) * ((100vw - 320px) / (1600 - 320)));
 
+  }
+}
+@media (max-width: 425px) {
+  .header{
+    width: 100%;
+    background-position: 50% 50%;
+  }
+  .header__nav{
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .header__text{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header__text h2{
+    font-size: 15px;
+    font-style: normal;
+    margin: 30px 50px;
+  }
+
+  .header__text h3{
+    font-size: 25px;
+    line-height: 20px;
+    margin: 10px 50px;
+  }
+
+  .header__text p{
+    font-size: 18px;
+    margin: 20px auto;
+    color: black;
+  }
+
+  .text__btn{
+    margin: 30px 50px;
+  }
+  .nav__logo{
+    margin: 0 auto;
+  }
+  .header__btn{
+    margin: 0 auto;
   }
 }
 </style>

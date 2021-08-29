@@ -7,7 +7,7 @@
       <div :class="['input-group', isEmailValid()]">
         <input type="email" class="form__control" placeholder="Enter your email address" v-model="email" />
       </div>
-      <BaseButton text="Subscribe"></BaseButton>
+      <BaseButton class="subscribe__btn" text="Subscribe"></BaseButton>
     </div>
   </div>
 
@@ -71,7 +71,6 @@ export default {
   font-weight: 500;
   line-height: 45px;
   margin-top: 20px;
-
 }
 
 .subscribe__form{
@@ -79,7 +78,6 @@ export default {
   margin-top: 50px;
   height: 54px;
   width: 569px;
-
 }
 
 input {outline:none;}
@@ -112,6 +110,43 @@ input {outline:none;}
 
 .enter {
   opacity: 1;
+}
+
+@media (max-width: 425px) {
+  .subscribe__form{
+    width: 100%;
+    height: 100%;
+
+  }
+  .subscribe__title{
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .subscribe__text{
+    font-size: 20px;
+    line-height: 35px;
+    margin:25px;
+    text-align: center;
+  }
+  .subscribe{
+    margin-top: 50px;
+  }
+  .subscribe__form{
+    flex-direction: column;
+    margin-top: 25px;
+  }
+  .subscribe__btn{
+    margin-top: 25px;
+  }
+  .form__control{
+    height: 25px;
+    width: 250px;
+    text-align: center;
+
+    padding: 0;
+  }
+
 
 }
 </style>

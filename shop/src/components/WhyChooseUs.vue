@@ -164,4 +164,15 @@ export default {
     margin: 5px;
   }
 }
+
+@media (max-width: 425px) {
+  .choose__block{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .choose{
+    height: 100%;
+  }
+
+}
 </style>

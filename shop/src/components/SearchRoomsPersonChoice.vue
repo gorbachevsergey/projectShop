@@ -105,4 +105,10 @@ input{
   color: black !important;
 }
 
+@media (max-width: 425px) {
+  .chosePeople__select{
+    flex-direction: column ;
+  }
+
+}
 </style>

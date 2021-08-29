@@ -49,4 +49,13 @@ export default {
   background-color: rgb(24, 98, 154);
   box-shadow: 0 0 10px 5px rgb(17, 91, 147);
 }
+
+@media (max-width: 425px) {
+  .button{
+    height: 34px;
+    width: 114px;
+    font-size: 13px;
+  }
+
+}
 </style>

@@ -148,4 +148,37 @@ h2{
   transform: scale(1);
 }
 
+@media (max-width: 425px) {
+  .choiceDate{
+    width: 100%;
+    height: 100%;
+    margin: 5px auto;
+  }
+  h2{
+    text-align: center;
+  }
+  .vdp-datepicker{
+    margin-left: 10px !important;
+  }
+  .choiceDate__line{
+    width: 150px;
+    height: 2px;
+    background-color: black;
+    padding-top: 1px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+  }
+  .choiceDate__date{
+    margin: 5px auto;
+  }
+  .chosePeople{
+    margin: 15px auto;
+  }
+  .choiceDate__btn{
+    margin: 30px auto;
+  }
+
+
+}
 </style>

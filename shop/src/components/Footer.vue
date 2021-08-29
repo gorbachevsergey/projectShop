@@ -200,4 +200,13 @@ input {outline:none;}
     margin-left: 50px;
   }
 }
+
+@media (max-width: 425px) {
+  .footer{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+}
 </style>

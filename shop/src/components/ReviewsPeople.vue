@@ -51,13 +51,17 @@ export default {
     onResize() {
       this.listReviewsLen = document.documentElement.clientWidth > 1024 ? 3 : 4;
     },
+    onResizeM() {
+      this.listReviewsLen = document.documentElement.clientWidth > 425 ? 4 : 2;
+    },
   },
   created() {
-    window.addEventListener('resize', this.onResize);
+    window.addEventListener('resize', this.onResize, this.onResizeM);
     this.onResize();
+    this.onResizeM();
   },
   beforeDestroy() {
-    window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('resize', this.onResize, this.onResizeM);
   },
 }
 
@@ -105,5 +109,12 @@ export default {
   opacity: 1;
   transform: translateY(0);
 }
+@media (max-width: 425px) {
 
+  .title__header{
+    font-size: 25px;
+    line-height: 35px;
+  }
+
+}
 </style>

@@ -165,5 +165,47 @@ iframe{
     border-radius: 15px;
   }
 }
+@media (max-width: 425px) {
+  .slider{
+    flex-direction: column;
+    padding: 0;
+
+  }
+  .swiper-container{
+    padding: 0;
+  }
+  iframe{
+    width: 400px;
+    height: 250px;
+  }
+  .swiper-slide{
+    width: 425px !important;
+  }
+  .slider__text{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+  .swiper-pagination{
+    width: 425px;
+  }
+  .swiper{
+    width: 100%;
+    height: 300px;
+    margin-left: 15px;
+  }
+
+  .slider__text p{
+    font-size: 25px;
+    padding: 15px;
+    font-weight: 300;
+    line-height: 25px;
+
+  }
+  .text__btn{
+    margin: 0 auto;
+  }
+}
 
 </style>

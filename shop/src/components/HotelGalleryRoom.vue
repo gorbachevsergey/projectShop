@@ -106,6 +106,26 @@ export default {
   .room{
     width: 800px;
   }
+}
+
+@media (max-width: 425px) {
+  .room{
+    width: 425px;
+    height: 250px;
+  }
+  .room__choice{
+    width: 150px;
+    height: 100px;
+  }
+  .room__name{
+    font-size: 15px;
+    line-height: 25px;
+  }
+
+  .room__price{
+    font-size: 12px;
+    line-height: 25px;
+  }
 
 }
 </style>
