@@ -1,7 +1,9 @@
 <template>
   <div class="header">
     <div class="header__nav">
-      <div class="nav__logo"></div>
+      <div class="nav__logo">
+        <img src="/img/logo.svg">
+      </div>
       <ul v-for="(item,index) in getListLinks" v-bind:key="index">
         <a
             :class="{active:item === selected }"
@@ -11,7 +13,7 @@
           {{item}}
         </a>
       </ul>
-      <BaseButton class="header__btn" text = ".l." ></BaseButton>
+      <BaseButton class="header__btn" text = "Book Now" ></BaseButton>
     </div>
     <div class="header__text">
       <h2>SERENITY</h2>
@@ -53,13 +55,19 @@ export default {
 
 
 .header{
-  width: 1600px;
+  display: flex;
+  flex-direction: column;
+  max-width: 1600px;
   height: 690px;
   background-image: url("~@/image/headerBackground.png");
+
 }
 
 .header__nav{
   display: flex;
+  width: 100%;
+
+
 
 }
 
@@ -75,10 +83,11 @@ a{
   font-style: normal;
   font-weight: 500;
   line-height: 24px;
-  padding-left: 40px;
+
   color: rgba(8, 31, 50, 1);
   transition: .3s;
-  align-items: center
+  align-items: center;
+  cursor: pointer;
 }
 
 a.active{
@@ -95,11 +104,9 @@ a:hover{
 }
 
 .nav__logo{
-  background-image: url("~@/image/logo.svg");
-  height: 144px;
   width: 186px;
-  margin-left: 220px;
-  margin-right: 115px;
+  height: 136px;
+  margin-left: 208px;
 }
 
 .header__text{
@@ -107,6 +114,9 @@ a:hover{
   width: 456px;
   margin-left: 227px;
   margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .header__text h2{
@@ -117,6 +127,7 @@ a:hover{
   font-weight: 500;
   line-height: 30px;
   letter-spacing: 0.1em;
+  margin: 0;
 
 }
 
@@ -138,24 +149,34 @@ a:hover{
   line-height: 29px;
   color: rgba(8, 31, 50, 1);
   opacity: 0.6;
-  margin-top: 35px;
   word-wrap:break-word;
   width: 350px;
+  margin: 35px 0 0 0;
 }
 
 .text__btn{
-  margin-top: 30px;
+  margin: 30px 0 0 0;
+
 
 }
 
 .header__btn{
-  margin-left: 331px;
   margin-top: 35px;
+  margin-right: 230px;
+
 }
 
 .text__blue{
   color: rgba(27, 117, 187, 1);
 }
 
+@media (max-width: 1600px) {
+  .nav__logo{
+    margin-left: calc(10px + (208 - 20) * ((100vw - 320px) / (1600 - 320)));
+  }
+  .header__btn{
+    margin-right: calc(10px + (230 - 20) * ((100vw - 320px) / (1600 - 320)));
 
+  }
+}
 </style>

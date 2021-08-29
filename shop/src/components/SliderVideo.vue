@@ -72,7 +72,7 @@ export default {
 
 .slider{
   display: flex;
-  width: 1600px;
+  max-width: 1600px;
   padding: 100px 0 0 127px;
   margin-top: 200px;
 }
@@ -105,6 +105,11 @@ export default {
 
 .text__btn{
   margin-top: 31px;
+  margin-left: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
 }
 
 .swiper{
@@ -117,8 +122,8 @@ export default {
 
 .swiper-slide-next{
   z-index: -1;
-  left: -440px;
-  bottom: 50px;
+  left: -540px;
+  bottom: 60px;
   opacity: 0.8;
 }
 
@@ -133,16 +138,32 @@ iframe{
   width: 630px;
   border-radius: 15px;
 }
+
 .before-enter {
   opacity: 0;
-  transform: translateX(-400px);
+  transform: translateY(100px);
   transition: all 2.5s ease-in-out;
 }
 
 .enter {
-  transform: translateX(0);
+  transform: translateY(0);
   margin-top: 0;
   opacity: 1;
 
 }
+
+@media (max-width: 1024px) {
+  .swiper-slide-next{
+    z-index: 0;
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+  }
+  iframe{
+    height: 325px;
+    width: 500px;
+    border-radius: 15px;
+  }
+}
+
 </style>

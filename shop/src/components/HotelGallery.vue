@@ -45,7 +45,7 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 .hotel__room{
-  width: 1140px;
+  max-width: 1140px;
   margin-top: 140px;
 }
 .room{
@@ -101,5 +101,12 @@ export default {
 .enter {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (max-width: 1024px) {
+  .room__about{
+    width: 800px;
+  }
+
 }
 </style>

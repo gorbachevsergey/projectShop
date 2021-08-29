@@ -63,14 +63,17 @@ Vue.use(VueScrollTo, {
 *::after {
   box-sizing: border-box;
 }
-
-
 .SearchRooms{
+  top: -25px;
   position: relative;
   z-index: 5;
-  top: -25px;
   left: -260px;
-  margin: 0 auto;
 }
 
+
+@media (max-width: 1024px) {
+  .SearchRooms{
+    left: 20px;
+  }
+}
 </style>

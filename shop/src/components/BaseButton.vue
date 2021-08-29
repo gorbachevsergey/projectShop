@@ -37,15 +37,16 @@ export default {
   line-height: 24px;
   border-radius: 5px;
   transition: .3s;
+  cursor: pointer;
 }
 
 .button:hover{
   background-color: rgb(32, 132, 208);
-  box-shadow: 5px 3px 4px 2px rgb(41, 146, 225)
+  box-shadow: 0 0 10px 5px rgb(41, 146, 225)
 }
 
 .button:active{
   background-color: rgb(24, 98, 154);
-  box-shadow: 5px 3px 4px 2px rgb(17, 91, 147);
+  box-shadow: 0 0 10px 5px rgb(17, 91, 147);
 }
 </style>

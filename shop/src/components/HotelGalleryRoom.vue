@@ -59,6 +59,8 @@ export default {
   flex-wrap: wrap;
   align-content: flex-start;
   justify-content: flex-end;
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 .room__about, .btn{
@@ -100,4 +102,10 @@ export default {
   border-radius: 15px;
 }
 
+@media (max-width: 1024px) {
+  .room{
+    width: 800px;
+  }
+
+}
 </style>

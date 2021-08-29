@@ -9,10 +9,8 @@
         <div v-for="item in listReviewsLength" :key="item.id" >
           <ReviewsPeopleItem
               class="animate__animated animate__fadeInUp"
-              :img="item.img"
-              :text="item.text"
-              :name="item.name"
-              :instagram="item.instagram"
+              :item="item"
+
           >
           </ReviewsPeopleItem>
         </div>
@@ -49,8 +47,18 @@ export default {
   methods:{
     listReviewsMore (){
       this.listReviewsLen += 3
-    }
-  }
+    },
+    onResize() {
+      this.listReviewsLen = document.documentElement.clientWidth > 1024 ? 3 : 4;
+    },
+  },
+  created() {
+    window.addEventListener('resize', this.onResize);
+    this.onResize();
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.onResize);
+  },
 }
 
 </script>
@@ -64,7 +72,7 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 .about{
-  width: 1140px;
+  max-width: 1140px;
   margin-top: 140px;
 }
 
@@ -78,6 +86,7 @@ export default {
   display: flex;
   justify-content: space-between;
 }
+
 .title__header{
   font-family: 'Gelasio' , serif;
   font-size: 32px;
@@ -85,14 +94,16 @@ export default {
   font-weight: 500;
   line-height: 45px;
 }
+
 .before-enter {
   opacity: 0;
-  transform: scale(0.0) translateX(-2000px);
+  transform: translateY(200px);
   transition: all 2s ease-in-out;
 }
 
 .enter {
   opacity: 1;
-  transform: scale(1,1) translateX(0);
+  transform: translateY(0);
 }
+
 </style>

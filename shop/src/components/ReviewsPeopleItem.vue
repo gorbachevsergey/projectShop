@@ -1,14 +1,14 @@
 <template>
-  <div :class="{ active : isActive }" class="abouts" @click=" isActive = !isActive">
+  <div class="abouts">
     <div class="abouts__foto">
-      <img :src="img">
+      <img :src="item.img">
     </div>
     <div class="abouts__quotes">
       <img src="~@/image/quotes.svg">
     </div>
-    <div class="abouts__text">{{text}}</div>
-    <div class="abouts__name">{{name}}</div>
-    <div class="abouts__instagram">{{instagram}}</div>
+    <div class="abouts__text">{{item.text}}</div>
+    <div class="abouts__name">{{item.name}}</div>
+    <div class="abouts__instagram">{{item.instagramLink}}</div>
   </div>
 
 </template>
@@ -20,29 +20,23 @@
 
 export default {
   props:{
-    img:{
-      type: String,
-      default: 'photo no load'
+    item:{
+      type: Object,
+      default: {
+        id:'1',
+        img: require('../image/man1.png'),
+        text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit Ultrices.',
+        name: 'David lee',
+        instagramLink: 'davidlee@',
+      }
     },
-    text:{
-      type: String,
-      default: 'text no load'
-    },
-    name:{
-      type: String,
-      default: 'name no load'
-    },
-    instagram:{
-      type: String,
-      default: 'instagram no load'
-    }
   },
   data(){
     return{
-      isActive: false,
+      isActive: 'false',
+      cash : '',
     }
   },
-
 }
 
 </script>
@@ -63,7 +57,12 @@ export default {
   margin-top: 60px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 15px;
+  cursor: pointer;
+  opacity: 0.7 !important;
+}
 
+.abouts:hover{
+  opacity: 1 !important;
 }
 
 .abouts__foto{
@@ -108,9 +107,5 @@ export default {
 
 
 }
-.active{
-  box-shadow: 0 0 10px 2px rgb(17, 91, 147);
-  border: 1px solid rgba(0, 0, 0, 0.1);
 
-}
 </style>

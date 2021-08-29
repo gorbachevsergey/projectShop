@@ -101,6 +101,10 @@ export default {
 
 }
 
+.choiceDate input{
+  cursor: pointer;
+}
+
 h2{
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
@@ -143,4 +147,5 @@ h2{
   opacity: 1;
   transform: scale(1);
 }
+
 </style>

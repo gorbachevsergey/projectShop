@@ -74,7 +74,7 @@ export default {
 .choose{
   display: flex;
   flex-direction: column;
-  width: 1140px;
+  max-width: 1140px;
   height: 480px;
   margin-top: 560px;
 }
@@ -96,7 +96,7 @@ export default {
   line-height: 29px;
   text-align: center;
   margin: 25px auto;
-  width: 819px;
+  max-width: 819px;
   height: 58px;
   color: rgba(8, 31, 50, 0.4);
 }
@@ -115,10 +115,10 @@ export default {
 
 .item__block{
   height: 262px;
-  width: 258px;
+  max-width: 258px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
 
 }
@@ -138,7 +138,7 @@ export default {
   font-weight: 400;
   line-height: 29px;
   height: 58px;
-  width: 228px;
+  max-width: 228px;
   color: rgba(8, 31, 50, 0.4);
   text-align: center;
 
@@ -154,5 +154,14 @@ export default {
   opacity: 1;
   margin-top: 60px;
   transform: translateY(0);
+}
+
+@media (max-width: 1024px) {
+  .choose__item{
+    margin: 10px;
+  }
+  .block__text{
+    margin: 5px;
+  }
 }
 </style>

@@ -5,11 +5,13 @@
       <vue-multi-select
           v-model="choiceAdults"
           :btnLabel="btnLabelAdults"
-          :selectOptions="getListAmountAdult"/>
+          :selectOptions="getListAmountAdult"
+          class="select__active"/>
       <vue-multi-select
           v-model="choiceKid"
           :btnLabel="btnLabelKid"
-          :selectOptions="getListAmountChildren"/>
+          :selectOptions="getListAmountChildren"
+          class="select__active"/>
       </div>
   </div>
 </template>
@@ -98,4 +100,9 @@ input{
   text-align: left;
 
 }
+
+.btn-select:hover{
+  color: black !important;
+}
+
 </style>

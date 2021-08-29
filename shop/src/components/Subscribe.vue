@@ -82,6 +82,8 @@ export default {
 
 }
 
+input {outline:none;}
+
 .form__control{
   width: 430px;
   height: 100%;
@@ -105,12 +107,11 @@ export default {
 
 .before-enter {
   opacity: 0;
-  transform: rotate(180deg);
   transition: all 1s ease-in-out;
 }
 
 .enter {
   opacity: 1;
-  transform: rotate(0);
+
 }
 </style>

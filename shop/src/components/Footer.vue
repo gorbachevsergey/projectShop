@@ -14,13 +14,13 @@
       </div>
     </div>
     <div class="footer__pages">
-      <div class="pages__title">Home</div>
+      <a class="pages__title">Home</a>
       <a class="title__ref" href="">Accessibility</a>
       <a class="title__ref" href="">Lertifiotion</a>
       <a class="title__ref" href="">Knowledge</a>
     </div>
     <div class="footer__pages">
-      <div class="pages__title">Pages</div>
+      <a class="pages__title">Pages</a>
       <a class="title__ref" href="">Blogs</a>
       <a class="title__ref" href="">Careers</a>
       <a class="title__ref" href="">Communing</a>
@@ -76,14 +76,18 @@ export default {
   display: flex;
   justify-content: space-between;
   margin-top: 124px;
-  width: 1203px;
+  max-width: 1203px;
   height: 250px;
   margin-bottom: 145px;
 }
 
+.footer__social{
+  margin-right: 76px;
+}
 .nav__logo{
   height: 100px;
 }
+
 .social__text{
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
@@ -117,6 +121,8 @@ export default {
   font-weight: 500;
   line-height: 30px;
   margin-bottom: 30px;
+  margin-left: 0;
+  margin-top: 50px;
 
 }
 
@@ -129,19 +135,21 @@ export default {
   text-decoration: none;
   color: rgba(8, 31, 50, 1);
   margin-bottom: 20px;
+  margin-left: 0;
 }
 
 .footer__pages{
   display: flex;
   flex-direction: column;
-
+  margin-right: 76px;
 }
 
 .form__input{
   display: flex;
-  margin-top: 50px;
+  margin-top: 30px;
   height: 54px;
   width: 569px;
+
 }
 
 .form__control{
@@ -152,6 +160,21 @@ export default {
   padding-left: 30px;
 
 }
+
+.form__title{
+  color: rgba(8, 31, 50, 1);
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+.subscribe__form{
+  margin-top: 50px;
+
+}
+input {outline:none;}
 
 .hasSuccess{
   box-shadow: 0 0 10px 2px rgb(17, 91, 147);
@@ -165,15 +188,16 @@ export default {
   border-radius: 5px;
 }
 
-.before-enter {
-  opacity: 0;
-  transform: translateY(200px);
-  transition: all 2s ease-in-out;
-}
+@media (max-width: 1024px) {
+  .subscribe__form{
+    display: none;
+  }
 
-.enter {
-  opacity: 1;
-  transform: translateY(0);
+  .footer{
+    margin: 0;
+  }
+  .footer__social{
+    margin-left: 50px;
+  }
 }
-
 </style>
